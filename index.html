@@ -4,7 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              },
+              fontFamily: {
+                'sans': ['Anton'
+
+                ]
+              }
+            }
+          }
+        }
+      </script>
+
     <title>Movie Soundtrack Generator</title>
 </head>
 <body>
@@ -12,7 +32,7 @@
     <!--Left Side of the Webpage-->
     <div>
         <header>
-            <h1 class="text-3xl font-bold">Movie Saver & Soundtrack Information Generator</h1>
+            <h1 class="text-3xl text-center font-">Movie Saver & Soundtrack Information Generator</h1>
         </header>
         
         <!--Rolling Gif Banner-->
