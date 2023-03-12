@@ -8,24 +8,24 @@
     <title>Movie Soundtrack Generator</title>
 </head>
 
-<body class="flex grid grid-cols-6 bg-stone-100">
+<body class="bg-stone-100">
   <!--Header-->
-  <header class="col-span-6 m-0 p-0">
-    <h1 class="bg-white text-center shadow-lg border-2 rounded-md m-8 p-8 text-3xl font-bold">Movie Watchlist Generator</h1> 
+  <header class="flex grid grid-cols-1 col-span-1 m-0 p-0">
+    <h1 class="bg-white text-center shadow-lg border-2 rounded-md m-8 p-8 text-5xl font-bold">Movie Watchlist Generator</h1> 
     <!--Rolling Gif Banner-->
     <div class="h-60 w-screen bg-[url('./assets/images/movie-posters.gif')]"></div>
   </header>
   
   <!--Generator Instructions, Search Bar, & Seach Button-->
-  <section class="col-span-6">
+  <section class="flex grid grid-cols-1 col-span-1">
     <!--Generator Instructions-->
-    <div class="text-sm text-center shadow-lg bg-white border-2 rounded-md m-8 p-4">
+    <div class="text-sm text-center shadow-lg bg-white border-2 rounded-md m-6 p-4">
       <h2 class="font-semibold text-xl my-2">How to Use Generator</h2>
       <p class="my-4">Use the search bar to search for a movie. Once the movie is selected, the generator will give you general information about the movie and a quote.</p>
       <p class="my-4">If you think the movie is interesting, you can add it to your watchlist for later.</p>
     </div>
     <!--Search Bar with Button-->
-    <div class="m-8 relative flex flex-wrap items-stretch">
+    <div class="mx-8 mb-6 relative flex flex-wrap items-stretch">
       <input
         type="search"
         class="relative m-0 -mr-px block w-[1%] w- flex-auto rounded-l border border-solid border-neutral-300 bg-gray-50 bg-clip-padding px-3 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
@@ -41,45 +41,48 @@
       </button>
   </section>
   
-  <!--Left Column-->
-  <!--Movie Watchlist-->
-  <section class="col-span-2 mx-8 flex flex-col bg-white rounded-md shadow-lg p-8">
-    <div>
-      <h2 class="text-lg font-bold text-center bg-cyan-600 shadow-lg text-white rounded-md mb-4">Movies Watchlist</h2>
-      <ul>
-        <li>ga;lskjdf;lasdjf</li>
-        <li>as;d</li>
-        <li>Jasmine</li>
-      </ul>
+  <div class="flex grid grid-cols-6">
+    <!--Left Column-->
+    <!--Movie Watchlist-->
+    <section class="lg:col-span-2 md:col-span-6 col-span-6 mx-6 flex flex-col bg-white rounded-md shadow-lg p-8">
+      <div>
+        <h2 class="text-lg font-bold text-center bg-cyan-600 shadow-lg text-white rounded-md mb-4">Movies Watchlist</h2>
+        <ul>
+          <li>ga;lskjdf;lasdjf</li>
+          <li>as;d</li>
+          <li>Jasmine</li>
+        </ul>
+      </div>
+    </section>
+
+    <!--Middle Column-->
+    <!--Movie Information-->
+    <section class="lg:col-span-2 md:col-span-6 col-span-6 mx-6 flex flex-col bg-white rounded-md shadow-lg p-8">
+      <h2 class="text-lg font-bold text-center bg-amber-600 shadow-lg text-white rounded-md mb-4">Movie Title Information</h2>
+      <div>  
+        <h3 class="py-2">Movie Title:</h3>
+        <div></div>
+        <h3 class="py-2">Release Date:</h3>
+        <div></div>
+        <h3 class="py-2">Movie Poster:</h3>
+        <h3 class="py-2">Critics Score: </h3>
+        <h3 class="py-2">Plot:</h3>
+        <p></p>
+        <!--Movie Watchlist Save Button-->
+        <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded my-4 justify-center">
+          Save to Movie Watchlist
+        </button>
     </div>
-  </section>
+    </section>
 
-  <!--Middle Column-->
-  <!--Movie Information-->
-  <section class="col-span-2 mx-8 flex flex-col bg-white rounded-md shadow-lg p-8">
-    <h2 class="text-lg font-bold text-center bg-amber-600 shadow-lg text-white rounded-md mb-4">Movie Title Information</h2>
-    <div>  
-      <h3 class="py-2">Movie Title:</h3>
-      <div></div>
-      <h3 class="py-2">Release Date:</h3>
-      <div></div>
-      <h3 class="py-2">Movie Poster:</h3>
-      <h3 class="py-2">Critics Score: </h3>
-      <h3 class="py-2">Plot:</h3>
-      <p></p>
-      <!--Movie Watchlist Save Button-->
-      <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded my-4 justify-center">
-        Save to Movie Watchlist
-      </button>
+    <!--Right Column-->
+    <!--Movie Soundtrack Information-->
+    <section class="lg:col-span-2 md:col-span-6 col-span-6 mx-6 flex flex-col bg-white rounded-md shadow-lg p-8">
+      <h2 class="text-lg font-bold text-center bg-indigo-700 shadow-lg text-white rounded-md mb-4">Movie Soundtrack Information</h2>
+    </section>
+
   </div>
-  </section>
 
-  <!--Right Column-->
-  <!--Movie Soundtrack Information-->
-  <section class="col-span-2 mx-8 flex flex-col bg-white rounded-md shadow-lg p-8">
-    <h2 class="text-lg font-bold text-center bg-indigo-700 shadow-lg text-white rounded-md mb-4">Movie Soundtrack Information</h2>
-  </section>
-    
   <script src="./assets/js/script.js"></script>
 
 </body>
