@@ -7,39 +7,54 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Movie Soundtrack Generator</title>
 </head>
-<body>
-<div class=" flex grid grid-cols-3">
-    <!--Left Side of the Webpage-->
-    <div class="col-span-2">
-        <header>
-            <h1 class="text-3xl font-bold justify-center p-4">Movie Saver & Soundtrack Information Generator</h1>
-        </header>
-        
-        <!--Rolling Gif Banner-->
-        <div class="h-96 w-screen bg-[url('/assets/images/movie-posters.gif')]">
 
-        </div>
-        
-        <!--Seach Bar for Movie Element-->
-        <div class="flex justify-center">
-            <div class="mb-3 xl:w-96">
-              <div class="relative mb-4 flex w-full flex-wrap items-stretch">
-                <input
-                  type="search"
-                  class="relative m-0 -mr-px block w-[1%] min-w-0 flex-auto rounded-l border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
-                  placeholder="Search for Movie"
-                  aria-label="Search"
-                  aria-describedby="button-addon3" />
-                <button
-                  class="relative z-[2] rounded-r border-2 border-primary px-6 py-2 text-xs font-medium uppercase text-primary transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
-                  type="button"
-                  id="button-addon3"
-                  data-te-ripple-init>
-                  Search
-                </button>
-              </div>
-            </div>
-          </div>
+<body class="flex grid grid-cols-5 bg-stone-100">
+  <!--Header-->
+  <header class="col-span-5 m-0 p-0">
+    <h1 class="bg-white text-center shadow-lg border-2 rounded-md m-8 p-8 text-3xl font-bold">Movie Watchlist Generator</h1> 
+    <!--Rolling Gif Banner-->
+    <div class="h-60 w-screen bg-[url('./assets/images/movie-posters.gif')]"></div>
+  </header>
+  
+  <!--Generator Instructions, Search Bar, and Last Movie Saved-->
+  <section class="col-span-5">
+    <div class="text-sm text-center shadow-lg bg-white border-2 rounded-md m-8 p-4">
+      <h2 class="font-semibold text-xl my-2">How to Use Generator</h2>
+      <p class="my-4">Use the search bar to search for a movie. Once the movie is selected, the generator will give you general information about the movie and a quote.</p>
+      <p class="my-4">If you think the movie is interesting, you can add it to your watchlist for later.</p>
+    </div>
+  </section>
+  
+  <!--Seach Bar, Movie Watchlist, & Searched Movie Information-->
+  <section class="col-span-2 mx-8">
+    <div class="my-4 bg-white rounded-md shadow-lg p-8">
+
+      <div class="relative flex w-full flex-wrap items-stretch">
+        <input
+          type="search"
+          class="relative m-0 -mr-px block w-[1%] w- flex-auto rounded-l border border-solid border-neutral-300 bg-gray-50 bg-clip-padding px-3 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
+          placeholder="Search for Movie"
+          aria-label="Search"
+          aria-describedby="button-addon3" />
+        <button
+          class="relative z-[2] rounded-r border-2 border-primary px-6 py-2 text-xs font-medium uppercase text-primary transition duration-150 ease-in-out hover:bg-sky-500 hover:text-white focus:outline-none focus:ring-0"
+          type="button"
+          id="button-addon3"
+          data-te-ripple-init>
+          Search
+        </button>
+      </div>
+      <div>
+        <h2 class="text-md font-medium text-center my-8">Movies Watchlist</h2>
+        <ul>
+          <li>ga;lskjdf;lasdjf</li>
+          <li>as;d</li>
+          <li>Jasmine</li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
 
         <!--List of Movie Soundtrack Songs Container-->
         <div>
@@ -47,23 +62,25 @@
                 
             </ul>
         </div>
-    </div>
-    
-    <!--Right Side of the Webpage-->
-    <div class="">
+
+      <div class="">
         <h2 class="justify-center">Jasmine's Checking Columns</h2>
         <p></p>
         <div>
             <!--Save Button-->
             <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-                Button
+                Save
               </button>
         </div>
         <button></button>
-
     </div>
-</div>  
-    <script src="assets/js/script.js"></script>
+    
+    <!--Right Side of the Webpage-->
+    
+
+    </div> 
+    <script src="./assets/js/script.js"></script>
 
 </body>
 </html>
+
