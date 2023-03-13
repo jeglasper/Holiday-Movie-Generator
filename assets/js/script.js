@@ -20,6 +20,8 @@ const options2 = {
 	}
 };
 
+var clearButton = document.getElementById('clear-button');
+var saveButton = document.getElementById('save-button');
 var searchButton = document.querySelector('#button-addon3');
 var enterSearch = document.querySelector('#enterSearch');
 var tableBody = document.getElementById('search-table');
@@ -94,6 +96,7 @@ var displayResults = function(event) {
 			plot.textContent = data.Plot;
 			moviePoster.setAttribute('src', data.Poster);
 			moviePoster.setAttribute('class', "")
+			saveButton.addEventListener('click', addMovieWatchlist)
 		})
 	
 	apiURL = 'https://moviesdatabase.p.rapidapi.com/titles/' + imdbID + '/ratings';
@@ -109,4 +112,16 @@ var displayResults = function(event) {
 		})
 }
 
+var addMovieWatchlist = function () {
+
+}
+
+var clearSearchList = function () {
+	var searchOptions = document.getElementsByTagName('tr');
+	for (var i = searchOptions.length - 1; i > -1; i--) {
+		searchOptions[i].remove();
+	}
+}
+
 searchButton.addEventListener("click", getSearchResults);
+clearButton.addEventListener("click", clearSearchList)
