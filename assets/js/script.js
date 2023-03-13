@@ -4,6 +4,7 @@
 //const tuneFindApiKey = '' 
 //const tuneFindEndpoint = 'https://[ENDPOINT].api.tunefind.com/api/v2'
 
+//API #1 - Search Functionality & Pull information about Film by imdbID
 const options = {
 	method: 'GET',
 	headers: {
@@ -12,6 +13,7 @@ const options = {
 	}
 };
 
+//API #2 - Average Movie Ratings by Number of Votes - Sorted by imdbID
 const options2 = {
 	method: 'GET',
 	headers: {
@@ -49,8 +51,7 @@ var getSearchResults = function() {
 
 	fetch(apiURL, options)
 		.then(function(response) {
-			return response.json();
-			
+			return response.json();		
 		})
 		.then (function(response) {
 			var myArray = response.Search;
@@ -95,7 +96,7 @@ var displayResults = function(event) {
 			actorNames.textContent = data.Actors;
 			plot.textContent = data.Plot;
 			moviePoster.setAttribute('src', data.Poster);
-			moviePoster.setAttribute('class', "")
+			moviePoster.setAttribute('class', "");
 			saveButton.addEventListener('click', addMovieWatchlist)
 		})
 	
