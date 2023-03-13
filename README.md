@@ -63,6 +63,8 @@ JQuery. "API Documentation". https://api.jquery.com/
 
 RapidAPI. "Movie Database Alternative. RapidAPI. https://rapidapi.com/rapidapi/api/movie-database-alternative/
 
+StackOverflow. "Replacing Spaces with Underscores in Javascript". https://stackoverflow.com/questions/441018/replacing-spaces-with-underscores-in-javascript
+
 Tailwind. "API Documentation". https://tailwindcss.com/docs/installation
 
 WhatSong. "Soundtrack Playlists". RapidAPI. https://rapidapi.com/whatsong-whatsong-default/api/soundtrack-playlists

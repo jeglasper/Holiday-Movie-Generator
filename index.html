@@ -30,6 +30,7 @@
         type="search"
         class="relative m-0 -mr-px block w-[1%] w- flex-auto rounded-l border border-solid border-neutral-300 bg-gray-50 bg-clip-padding px-3 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
         placeholder="Search for Movie"
+        id="enterSearch" 
         aria-label="Search"
         aria-describedby="button-addon3" />
       <button
@@ -39,6 +40,17 @@
         data-te-ripple-init>
         Search
       </button>
+    </div>
+    <!--Search Results Table-->
+    <div class="text-md text-center shadow-lg bg-white border-2 rounded-md ml-6 mr-6 mb-6 p-4" id="searchResults">
+      <table class="table mx-auto my-4">
+        <th>
+          <p class="my-1">Search Results</p>
+        </th>
+        <tbody id="search-table" class="mx-auto text-center"></tbody>
+      </table>
+    </div>
+    
   </section>
   
   <div class="flex grid grid-cols-6">
