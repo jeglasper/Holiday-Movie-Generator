@@ -38,12 +38,13 @@ var getSearchResults = function() {
 			console.log(response);
 		})
 		.then(function(data) {
+			console.log(data);
 			for (var i = 0; i < data.length; i++) {
 				var createTableRow = document.createElement('tr');
 				var tableData = document.createElement('td');
 				var movieTitleIMDB = document.createElement('div');
 
-				movieTitleIMDB.textContent = json.Search[i].Title + ' ' + json.Search[i].imdbID;
+				movieTitleIMDB.textContent = data[i].Title + ' ' + data[i].imdbID;
 				//movieTitleIMDB.setAttribute('imdbID', Search[i].imdbID);
 
 				tableData.appendChild(movieTitleIMDB);
