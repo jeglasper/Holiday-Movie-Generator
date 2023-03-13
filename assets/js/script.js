@@ -4,7 +4,7 @@
 //const tuneFindApiKey = '' 
 //const tuneFindEndpoint = 'https://[ENDPOINT].api.tunefind.com/api/v2'
 
-const options1 = {
+const options = {
 	method: 'GET',
 	headers: {
 		'X-RapidAPI-Key': '6234e9a526msh58287cced736d7cp1f89cdjsn3c58ad387de2',
@@ -12,10 +12,25 @@ const options1 = {
 	}
 };
 
+const options2 = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '6234e9a526msh58287cced736d7cp1f89cdjsn3c58ad387de2',
+		'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
+	}
+};
+
 var searchButton = document.querySelector('#button-addon3');
 var enterSearch = document.querySelector('#enterSearch');
 var tableBody = document.getElementById('search-table');
-var searchResults = document.getElementById('searchResults')
+var searchResults = document.getElementById('searchResults');
+var movieTitle = document.getElementById('movie-title');
+var releaseDate = document.getElementById('release-date');
+var actorNames = document.getElementById('actors');
+var plot = document.getElementById('plot');
+var moviePoster = document.getElementById('movie-poster');
+var avgRating = document.getElementById('avg-rating');
+var numVote = document.getElementById('votes');
 
 var searchterm = '';
 
@@ -30,46 +45,68 @@ var getSearchResults = function() {
 	var apiURL = 'https://movie-database-alternative.p.rapidapi.com/?s=' + searchterm + '&type=movie';
 	console.log(apiURL);
 
-	fetch(apiURL, options1)
+	fetch(apiURL, options)
 		.then(function(response) {
 			return response.json();
+			
 		})
 		.then (function(response) {
-			console.log(response);
-		})
-		.then(function(data) {
-			console.log(data);
-			for (var i = 0; i < data.length; i++) {
+			var myArray = response.Search;
+			console.log(myArray);
+			
+			//For Loop - displays search results
+			for (var i = 0; i < myArray.length; i++) {
 				var createTableRow = document.createElement('tr');
 				var tableData = document.createElement('td');
 				var movieTitleIMDB = document.createElement('div');
 
-				movieTitleIMDB.textContent = data[i].Title + ' ' + data[i].imdbID;
-				//movieTitleIMDB.setAttribute('imdbID', Search[i].imdbID);
+				movieTitleIMDB.textContent = myArray[i].Title + ' (' + myArray[i].Year + ') ' + '- imdbID: ' +  myArray[i].imdbID + '';
 
 				tableData.appendChild(movieTitleIMDB);
 				createTableRow.appendChild(tableData);
 				tableBody.appendChild(createTableRow);
 			}
+			searchterm = '';
+			var searchOptions = document.getElementsByTagName('tr');
+			for (var i = 0; i < searchOptions.length; i++) {
+				console.log(searchOptions[i].textContent);
+				searchOptions[i].addEventListener('click',displayResults)
+			}
 		})
+}
 
+var displayResults = function(event) {
+	var imdbID = event.target.textContent.substring(event.target.textContent.length - 9);
+	console.log(imdbID);
+	console.log(typeof imdbID);
+	var apiURL = 'https://movie-database-alternative.p.rapidapi.com/?r=json&i=' + imdbID + '&type=movie';
+	console.log(apiURL);
 
+	fetch(apiURL, options)
+		.then(function(response) {
+			return response.json();
+		})
+		.then(function(data) {
+			console.log(data);
+			movieTitle.textContent = data.Title;
+			releaseDate.textContent = data.Released;
+			actorNames.textContent = data.Actors;
+			plot.textContent = data.Plot;
+			moviePoster.setAttribute('src', data.Poster);
+			moviePoster.setAttribute('class', "")
+		})
+	
+	apiURL = 'https://moviesdatabase.p.rapidapi.com/titles/' + imdbID + '/ratings';
 
+	fetch(apiURL,options2)
+		.then(function(response) {
+			return response.json();
+		})
+		.then(function(data) {
+			console.log(data);
+			avgRating.textContent = data.results.averageRating;
+			numVote.textContent = data.results.numVotes;
+		})
 }
 
 searchButton.addEventListener("click", getSearchResults);
-
-
-
-//var getSearchResults = function () {
-
-//
-//	fetch(apiURL, options1)
-//		.then(function (response) {
-//			console.log(response);
-//			response.json().then(function (data) {
-//				console.log(data, title);
-
-//			})
-//		})
-//}

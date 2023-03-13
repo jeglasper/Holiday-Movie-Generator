@@ -19,13 +19,13 @@
   <!--Generator Instructions, Search Bar, & Seach Button-->
   <section class="flex grid grid-cols-1 col-span-1">
     <!--Generator Instructions-->
-    <div class="text-sm text-center shadow-lg bg-white border-2 rounded-md m-6 p-4">
+    <!--<div class="text-sm text-center shadow-lg bg-white border-2 rounded-md m-6 p-4">
       <h2 class="font-semibold text-xl my-2">How to Use Generator</h2>
       <p class="my-4">Use the search bar to search for a movie. Once the movie is selected, the generator will give you general information about the movie and a quote.</p>
       <p class="my-4">If you think the movie is interesting, you can add it to your watchlist for later.</p>
-    </div>
+    </div>-->
     <!--Search Bar with Button-->
-    <div class="mx-8 mb-6 relative flex flex-wrap items-stretch">
+    <div class="mx-8 my-6 relative flex flex-wrap items-stretch">
       <input
         type="search"
         class="relative m-0 -mr-px block w-[1%] w- flex-auto rounded-l border border-solid border-neutral-300 bg-gray-50 bg-clip-padding px-3 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
@@ -41,22 +41,56 @@
         Search
       </button>
     </div>
-    <!--Search Results Table-->
-    <div class="text-md text-center shadow-lg bg-white border-2 rounded-md ml-6 mr-6 mb-6 p-4" id="searchResults">
-      <table class="table mx-auto my-4">
-        <th>
-          <p class="my-1">Search Results</p>
-        </th>
-        <tbody id="search-table" class="mx-auto text-center"></tbody>
-      </table>
-    </div>
     
   </section>
   
   <div class="flex grid grid-cols-6">
     <!--Left Column-->
+    <!--Search Results Table-->
+    <section class="lg:col-span-3 md:col-span-6 col-span-6 mx-6 flex flex-col bg-white rounded-md shadow-lg p-8">
+      <div id="searchResults">
+        <h2 class="text-lg font-bold text-center bg-cyan-500 shadow-lg text-white rounded-md mb-4">Search Results</h2>
+        <table class="table mx-auto my-4">
+          <tbody id="search-table" class="mx-auto text-center"></tbody>
+        </table>
+        <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded my-4 text-center">
+          Clear Search Results
+        </button>
+      </div>
+    </section>
+
+    <!--Right Column-->
+    <!--Movie Information-->
+    <section class="lg:col-span-3 md:col-span-6 col-span-6 mx-6 flex flex-col bg-white rounded-md shadow-lg p-8">
+      <h2 class="text-lg font-bold text-center bg-amber-600 shadow-lg text-white rounded-md mb-4">Movie Title Information</h2>
+      <div>  
+        <h3 class="py-2 font-bold">Movie Title: <span class="font-normal" id="movie-title"></span></h3>
+        <div></div>
+        <h3 class="py-2 font-bold">Release Date: <span class="font-normal" id="release-date"></span></h3>
+        <div></div>
+        <h3 class="py-2 font-bold">Actors: <span class="font-normal" id="actors"></span></h3>
+        
+        <h3 class="py-2 font-bold">Plot: <span class="font-normal" id="plot"></span></h3>
+        <h3 class="py-2 font-bold">Average Rating: <span class="font-normal" id="avg-rating"></span></h3>
+        <h3 class="py-2 font-bold">Number of Votes: <span class="font-normal" id="votes"></span></h3>
+        <h3 class="py-2 font-bold">Poster: </h3>
+        <img id="movie-poster">
+        
+        <!--Movie Watchlist Save Button-->
+        <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded my-4 justify-center">
+          Save to Movie Watchlist
+        </button>
+    </div>
+    </section>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="./assets/js/script.js"></script>
+
+</body>
+</html>
+
     <!--Movie Watchlist-->
-    <section class="lg:col-span-2 md:col-span-6 col-span-6 mx-6 flex flex-col bg-white rounded-md shadow-lg p-8">
+    <!--<section class="lg:col-span-2 md:col-span-6 col-span-6 mx-6 flex flex-col bg-white rounded-md shadow-lg p-8">
       <div>
         <h2 class="text-lg font-bold text-center bg-cyan-600 shadow-lg text-white rounded-md mb-4">Movies Watchlist</h2>
         <ul>
@@ -65,39 +99,12 @@
           <li>Jasmine</li>
         </ul>
       </div>
-    </section>
+    </section>-->
 
-    <!--Middle Column-->
-    <!--Movie Information-->
-    <section class="lg:col-span-2 md:col-span-6 col-span-6 mx-6 flex flex-col bg-white rounded-md shadow-lg p-8">
-      <h2 class="text-lg font-bold text-center bg-amber-600 shadow-lg text-white rounded-md mb-4">Movie Title Information</h2>
-      <div>  
-        <h3 class="py-2">Movie Title:</h3>
-        <div></div>
-        <h3 class="py-2">Release Date:</h3>
-        <div></div>
-        <h3 class="py-2">Movie Poster:</h3>
-        <h3 class="py-2">Critics Score: </h3>
-        <h3 class="py-2">Plot:</h3>
-        <p></p>
-        <!--Movie Watchlist Save Button-->
-        <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded my-4 justify-center">
-          Save to Movie Watchlist
-        </button>
-    </div>
-    </section>
-
-    <!--Right Column-->
+        <!--Right Column-->
     <!--Movie Soundtrack Information-->
-    <section class="lg:col-span-2 md:col-span-6 col-span-6 mx-6 flex flex-col bg-white rounded-md shadow-lg p-8">
+    <!--<section class="lg:col-span-2 md:col-span-6 col-span-6 mx-6 flex flex-col bg-white rounded-md shadow-lg p-8">
       <h2 class="text-lg font-bold text-center bg-indigo-700 shadow-lg text-white rounded-md mb-4">Movie Soundtrack Information</h2>
     </section>
 
   </div>
-
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="./assets/js/script.js"></script>
-
-</body>
-</html>
-
