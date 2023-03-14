@@ -33,7 +33,7 @@ var plot = document.getElementById('plot');
 var moviePoster = document.getElementById('movie-poster');
 var avgRating = document.getElementById('avg-rating');
 var numVote = document.getElementById('votes');
-
+var movieList = document.getElementById('movie-list');
 var searchterm = '';
 
 var getSearchResults = function() {
@@ -97,6 +97,7 @@ var displayResults = function(event) {
 			moviePoster.setAttribute('src', data.Poster);
 			moviePoster.setAttribute('class', "")
 			saveButton.addEventListener('click', addMovieWatchlist)
+			console.log(movieTitle.textContent);
 		})
 	
 	apiURL = 'https://moviesdatabase.p.rapidapi.com/titles/' + imdbID + '/ratings';
@@ -112,10 +113,14 @@ var displayResults = function(event) {
 		})
 }
 
+
+
 var addMovieWatchlist = function () {
 
+	var saveList = document.createElement('li')
+	saveList.textContent = movieTitle.textContent;
+	movieList.appendChild(saveList);
 }
-
 var clearSearchList = function () {
 	var searchOptions = document.getElementsByTagName('tr');
 	for (var i = searchOptions.length - 1; i > -1; i--) {
