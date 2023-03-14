@@ -36,7 +36,7 @@ var moviePoster = document.getElementById('movie-poster');
 var avgRating = document.getElementById('avg-rating');
 var numVote = document.getElementById('votes');
 var movieList = document.getElementById('movie-list');
-var searchterm = '';
+var searchTermStorage = [];
 
 var getSearchResults = function() {
 
@@ -129,10 +129,19 @@ var displayResults = function(event) {
 
 
 var addMovieWatchlist = function () {
-
 	var saveList = document.createElement('li')
-	saveList.textContent = movieTitle.textContent;
-	movieList.appendChild(saveList);
+    saveList.textContent = movieTitle.textContent;
+    movieList.appendChild(saveList);
+	searchTermStorage.push(movieTitle.textContent.trim())
+	localStorage.setItem("searchTermStorage", JSON.stringify(searchTermStorage))
+	renderMovieWatchList();
+}
+
+function renderMovieWatchList () {
+	var savedMovies = JSON.parse(localStorage.getItem("searchTermStorage"))
+	console.log(savedMovies)
+	//movieList.appendChild(savedMovies);
+	
 }
 
 //When clear search results button is clicked, the search results are cleared from the left column
