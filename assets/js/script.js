@@ -138,4 +138,4 @@ var clearSearchList = function () {
 }
 
 searchButton.addEventListener("click", getSearchResults);
-clearButton.addEventListener("click", clearSearchList)
+clearButton.addEventListener("click", clearSearchList);
