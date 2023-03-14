@@ -16,10 +16,10 @@
     <div class="h-60 mx-8 rounded-md bg-[url('./assets/images/movie-posters.gif')]"></div>
   </header>
   
-  <!--Search Bar, & Search Button-->
+  <!--Container for Search Bar & Search Button-->
   <section class="flex grid grid-cols-1 col-span-1">
-    <!--Search Bar with Button-->
     <div class="mx-8 my-6 relative flex flex-wrap items-stretch">
+      <!--Search Bar-->
       <input
         type="search"
         class="relative m-0 -mr-px block w-[1%] w- flex-auto rounded-l border border-solid border-neutral-300 bg-gray-50 bg-clip-padding px-3 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
@@ -27,7 +27,8 @@
         id="enterSearch" 
         aria-label="Search"
         aria-describedby="button-addon3" />
-      <button
+        <!--Search Button-->
+        <button
         class="relative z-[2] rounded-r border-2 border-primary px-6 py-2 text-xs font-medium uppercase text-primary transition duration-150 ease-in-out hover:bg-sky-500 hover:text-white focus:outline-none focus:ring-0"
         type="button"
         id="button-addon3"
@@ -37,6 +38,7 @@
     </div>
   </section>
   
+  <!--Container with Three Columns - Search Results Table, Movie Information, Movie Watchlist-->
   <div class="flex grid grid-cols-6">
     <!--Left Column-->
     <!--Search Results Table-->
@@ -85,28 +87,10 @@
     </section>
 
   </div>
+  
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="./assets/js/script.js"></script>
 
 </body>
+
 </html>
-
-    <!--Movie Watchlist-->
-    <!--<section class="lg:col-span-2 md:col-span-6 col-span-6 mx-6 flex flex-col bg-white rounded-md shadow-lg p-8">
-      <div>
-        <h2 class="text-lg font-bold text-center bg-cyan-600 shadow-lg text-white rounded-md mb-4">Movies Watchlist</h2>
-        <ul>
-          <li>ga;lskjdf;lasdjf</li>
-          <li>as;d</li>
-          <li>Jasmine</li>
-        </ul>
-      </div>
-    </section>-->
-
-        <!--Right Column-->
-    <!--Movie Soundtrack Information-->
-    <!--<section class="lg:col-span-2 md:col-span-6 col-span-6 mx-6 flex flex-col bg-white rounded-md shadow-lg p-8">
-      <h2 class="text-lg font-bold text-center bg-indigo-700 shadow-lg text-white rounded-md mb-4">Movie Soundtrack Information</h2>
-    </section>
-
-  </div>
