@@ -38,6 +38,14 @@ var numVote = document.getElementById('votes');
 var movieList = document.getElementById('movie-list');
 var searchTermStorage = [];
 
+//populates search term storage if not empty in local storage
+addEventListener("load", (event) => {
+    if (localStorage.getItem('searchTermStorage') !== null){
+		searchTermStorage = JSON.parse(localStorage.getItem("searchTermStorage"))
+	}
+	renderMovieWatchList();
+})
+
 var getSearchResults = function() {
 
 	//creates the applicable search language to insert in the the apiURL to pull search items
@@ -137,11 +145,16 @@ var addMovieWatchlist = function () {
 	renderMovieWatchList();
 }
 
+//Renders list of movies stores in local storage
 function renderMovieWatchList () {
 	var savedMovies = JSON.parse(localStorage.getItem("searchTermStorage"))
 	console.log(savedMovies)
-	//movieList.appendChild(savedMovies);
-	
+	for (let i = 0; i < searchTermStorage.length; i++) {
+		const movieName = searchTermStorage[i];
+		var saveList = document.createElement('li')
+		saveList.textContent = movieName;
+		movieList.appendChild(saveList);
+	}
 }
 
 //When clear search results button is clicked, the search results are cleared from the left column
