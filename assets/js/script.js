@@ -4,6 +4,7 @@
 //const tuneFindApiKey = '' 
 //const tuneFindEndpoint = 'https://[ENDPOINT].api.tunefind.com/api/v2'
 
+//API #1 - Search Functionality & Pull information about Film by imdbID
 const options = {
 	method: 'GET',
 	headers: {
@@ -12,6 +13,7 @@ const options = {
 	}
 };
 
+//API #2 - Average Movie Ratings by Number of Votes - Sorted by imdbID
 const options2 = {
 	method: 'GET',
 	headers: {
@@ -44,19 +46,22 @@ var getSearchResults = function() {
 	searchterm = searchterm.replace(/ /g,'%20');
 	console.log('apiURL with Searched Movie Title: ' + searchterm);
 
+	//creates apiURL unique to search result
 	var apiURL = 'https://movie-database-alternative.p.rapidapi.com/?s=' + searchterm + '&type=movie';
 	console.log(apiURL);
 
+	//calls API #1 & creates elements to display search results in Search Results column
 	fetch(apiURL, options)
 		.then(function(response) {
-			return response.json();
-			
+			return response.json();		
 		})
+		
 		.then (function(response) {
+			//pulls Search array from response object
 			var myArray = response.Search;
 			console.log(myArray);
 			
-			//For Loop - displays search results
+			//Create elements for each search result and appends them to the HTML. Makes search results visible in left column - For Loop Functionality
 			for (var i = 0; i < myArray.length; i++) {
 				var createTableRow = document.createElement('tr');
 				var tableData = document.createElement('td');
@@ -69,6 +74,8 @@ var getSearchResults = function() {
 				tableBody.appendChild(createTableRow);
 			}
 			searchterm = '';
+			
+			//Adds an event listener to each search result
 			var searchOptions = document.getElementsByTagName('tr');
 			for (var i = 0; i < searchOptions.length; i++) {
 				console.log(searchOptions[i].textContent);
@@ -77,13 +84,18 @@ var getSearchResults = function() {
 		})
 }
 
+//When a search result is clicked, it renders information about the movie in the middle column
 var displayResults = function(event) {
+	//pulls the imdbID from the movie title that was clicked
 	var imdbID = event.target.textContent.substring(event.target.textContent.length - 9);
 	console.log(imdbID);
 	console.log(typeof imdbID);
+	
+	//inserts imdbID into apiURL to get specifc information for the selected movie title
 	var apiURL = 'https://movie-database-alternative.p.rapidapi.com/?r=json&i=' + imdbID + '&type=movie';
 	console.log(apiURL);
 
+	//pulls info about the movie and then utilizes array to render information about the movie into the middle column
 	fetch(apiURL, options)
 		.then(function(response) {
 			return response.json();
@@ -95,12 +107,13 @@ var displayResults = function(event) {
 			actorNames.textContent = data.Actors;
 			plot.textContent = data.Plot;
 			moviePoster.setAttribute('src', data.Poster);
-			moviePoster.setAttribute('class', "")
+			moviePoster.setAttribute('class', "");
 			saveButton.addEventListener('click', addMovieWatchlist)
 		})
-	
+	//changes API to API #2
 	apiURL = 'https://moviesdatabase.p.rapidapi.com/titles/' + imdbID + '/ratings';
-
+	
+	//pulls data from API #2 then utilizes the array to render rating information about the movie into the middle column
 	fetch(apiURL,options2)
 		.then(function(response) {
 			return response.json();
@@ -116,6 +129,7 @@ var addMovieWatchlist = function () {
 
 }
 
+//When clear search results button is clicked, the search results are cleared from the left column
 var clearSearchList = function () {
 	var searchOptions = document.getElementsByTagName('tr');
 	for (var i = searchOptions.length - 1; i > -1; i--) {
@@ -124,4 +138,4 @@ var clearSearchList = function () {
 }
 
 searchButton.addEventListener("click", getSearchResults);
-clearButton.addEventListener("click", clearSearchList)
+clearButton.addEventListener("click", clearSearchList);
