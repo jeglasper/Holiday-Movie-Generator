@@ -57,11 +57,19 @@ Project Presentation: https://docs.google.com/presentation/d/1cwsSEguvHoDAtS7VH8
 
 ![Website Preview]()
 
+## **Collaborators**
+
+Aaron Flores - @FuzzyGiraffee: https://github.com/FuzzyGiraffee
+Adam Garza - @AdamGarza33: https://github.com/AdamGarza33
+Jasmine Glasper - @jeglasper: https://github.com/jeglasper
+
 ## **Credits**
 
 JQuery. "API Documentation". https://api.jquery.com/
 
-RapidAPI. "Movie Database Alternative. RapidAPI. https://rapidapi.com/rapidapi/api/movie-database-alternative/
+RapidAPI. "Movie Database" RapidAPI. https://rapidapi.com/SAdrian/api/moviesdatabase/
+
+RapidAPI. "Movie Database Alternative" RapidAPI. https://rapidapi.com/rapidapi/api/movie-database-alternative/
 
 StackOverflow. "Replacing Spaces with Underscores in Javascript". https://stackoverflow.com/questions/441018/replacing-spaces-with-underscores-in-javascript
 
