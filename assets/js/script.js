@@ -142,7 +142,6 @@ var addMovieWatchlist = function () {
     movieList.appendChild(saveList);
 	searchTermStorage.push(movieTitle.textContent.trim())
 	localStorage.setItem("searchTermStorage", JSON.stringify(searchTermStorage))
-	renderMovieWatchList();
 }
 
 //Renders list of movies stores in local storage
