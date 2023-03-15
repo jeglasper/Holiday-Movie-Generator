@@ -55,7 +55,8 @@ Project Presentation: https://docs.google.com/presentation/d/1cwsSEguvHoDAtS7VH8
 
 ### *Demo*
 
-![Website Preview]()
+![Website Demo](/assets/images/msedge_vB6DBbu3n6.gif)
+
 
 ## **Credits**
 
