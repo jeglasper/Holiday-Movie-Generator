@@ -43,9 +43,9 @@ Please see below for important links to Github Repository, the deployed website,
 
 ### *Important Links*
 
-Deployed Webpage:
+Deployed Webpage: https://jeglasper.github.io/Movie-Watchlist-Generator/
 
-GitHub Repository: https://github.com/jeglasper/Movie-Soundtrack-Generator
+GitHub Repository: https://github.com/jeglasper/Movie-Watchlist-Generator
 
 Project Presentation: https://docs.google.com/presentation/d/1cwsSEguvHoDAtS7VH8V5mOwKEEzizwbwFeihO1uXi04/edit?usp=sharing
 
@@ -61,8 +61,11 @@ Project Presentation: https://docs.google.com/presentation/d/1cwsSEguvHoDAtS7VH8
 ## **Collaborators**
 
 Aaron Flores - @FuzzyGiraffee: https://github.com/FuzzyGiraffee
+
 Adam Garza - @AdamGarza33: https://github.com/AdamGarza33
+
 Jasmine Glasper - @jeglasper: https://github.com/jeglasper
+
 
 ## **Credits**
 
@@ -75,8 +78,6 @@ RapidAPI. "Movie Database Alternative" RapidAPI. https://rapidapi.com/rapidapi/a
 StackOverflow. "Replacing Spaces with Underscores in Javascript". https://stackoverflow.com/questions/441018/replacing-spaces-with-underscores-in-javascript
 
 Tailwind. "API Documentation". https://tailwindcss.com/docs/installation
-
-WhatSong. "Soundtrack Playlists". RapidAPI. https://rapidapi.com/whatsong-whatsong-default/api/soundtrack-playlists
 
 
 
